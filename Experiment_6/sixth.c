@@ -258,72 +258,85 @@ int SelectSort(int iSortArray_2[], int iSize_2)
 	return 0;
 }
 
-//void StringStudy(void)
-//{
-//	char cStr1[20];
-//	char cStr2[20] = { 'H', 'e', 'l', 'l', 'o', ' ','t', 'h', 'e', ' ', 'w', 'o', 'r', 'l', 'd', '!' };
-//	char cStr3[] = "Programming is interesting.";
-//	char* pStr1 = "OK!";
-//	char* pStr2, * pStr3;
-//	int i;
-//	printf("Assign a string to the array or the pointer :\n");
-//	*cStr1 = "OK"; 
-//	pStr2 = "ABCD!";
-//	puts(pStr1);
-//	puts(pStr2);
-//	printf("Study the address of a string const:\n");
-//	printf("Address of \"ABCD!\":%x\n", "ABCD!");
-//	printf("pStr2=%x\n", pStr2);
-//	printf("The third char of \"ABCD!\":%c\n", "ABCD!"[3]);
-//	printf("Input a string to the pointer pStr1 by calling gets():\n");
-//	gets(pStr1);
-//	puts(pStr1);
-//	printf("Input \"12345 abcde\" to the array cStr1 by calling gets():\n");
-//	gets(cStr1); //输入字符串"12345 abcde"
-//	puts(cStr1);
-//	printf("Input \"ABCDEF 123456\" to the array cStr1 by calling scanf():\n");
-//	scanf("%s", cStr1); //输入字符串"ABCDEF 123456"
-//	puts(cStr1);
-//	//fflush(stdin);
-//	pStr1 = cStr1;
-//	printf("Using getchar() to input \"Hi, hello!\" ended by ENTER:\n");
-//	i = 0;
-//	pStr1[i] = getchar(); //输入字符串"Hi, hello!"
-//	while ((pStr1[i] != '\n') && (i < 19))
-//	{
-//		i++;
-//		pStr1[i] = getchar();
-//	}
-//	pStr1[i] = '\0';
-//	printf("Output the string by calling printf():%s\n", pStr1);
-//	pStr1 = cStr1;
-//	printf("Using getche() to input \"How are you!\" ended by ESC:\n");
-//	i = 0;
-//	pStr1[i] = getche(); //输入字符串"How are you!"+ESC
-//	while ((pStr1[i] != ESC) && (i < 19))
-//	{
-//		i++;
-//		pStr1[i] = getche();
-//	}
-//	// pStr1[i]='\0';
-//	printf("\nOutput the string by calling printf():%s\n", pStr1);
-//	printf("Display string2 and string3 by calling puts():\n");
-//	puts(cStr2);
-//	puts(cStr3);
-//	printf("Size of the array cStr2:%d\n", sizeof(cStr2));
-//	printf("Size of the array cStr3:%d\n", sizeof(cStr3));
-//	printf("Using the pointer to output the string2 by calling printf():\n");
-//	pStr2 = cStr2;
-//	printf("%s", pStr2);
-//	printf("Using the pointer to output the string3 by calling putchar():\n");
-//	pStr3 = cStr3;
-//	while (*pStr3)
-//	{
-//		putchar(*pStr3);
-//		pStr3++;
-//	}
-//	printf("The End!\n");
-//}
+void StringStudy()
+{
+	char cStr1[20];
+	char cStr2[20] = { 'H', 'e', 'l', 'l', 'o', ' ','t', 'h', 'e', ' ', 'w', 'o', 'r', 'l', 'd', '!' };
+	char cStr3[] = "Programming is interesting.";
+	char* pStr1 = "OK!";
+	char* pStr2, * pStr3;
+	int i;
+
+	printf("Assign a string to the array or the pointer :\n");
+	//	cStr1="OK"; 不能给数组名赋值
+	gets(cStr1);
+	pStr2 = "ABCD!";
+	puts(pStr1);
+	puts(pStr2);
+
+	printf("Study the address of a string const:\n");
+	printf("Address of \"ABCD!\":%x\n", "ABCD!");
+	printf("pStr2=%x\n", pStr2);
+	printf("The third char of \"ABCD!\":%c\n", "ABCD!"[3]);
+
+	fflush(stdin);
+	printf("Input a string to the pointer pStr1 by calling gets():\n");
+	pStr1 = cStr1; //pStr1必须指向确定的存储单元，否则成为野指针
+	gets(pStr1);
+	puts(pStr1);
+
+	printf("Input \"12345 abcde\" to the array cStr1 by calling gets():\n");
+	gets(cStr1); //输入字符串"12345 abcde"
+	puts(cStr1);
+
+	printf("Input \"ABCDEF 123456\" to the array cStr1 by calling scanf():\n");
+	scanf("%s", cStr1); //输入字符串"ABCDEF 123456"
+	puts(cStr1);
+
+	fflush(stdin);
+	pStr1 = cStr1;
+	printf("Using getchar() to input \"Hi, hello!\" ended by ENTER:\n");
+	i = 0;
+	pStr1[i] = getchar(); //输入字符串"Hi, hello!"
+	while ((pStr1[i] != '\n') && (i < 19))
+	{
+		i++;
+		pStr1[i] = getchar();
+	}
+	pStr1[i] = '\0';
+	printf("Output the string by calling printf():%s\n", pStr1);
+
+	pStr1 = cStr1;
+	printf("Using getche() to input \"How are you!\" ended by ESC:\n");
+	i = 0;
+	pStr1[i] = getche(); //输入字符串"How are you!"+ESC
+	while ((pStr1[i] != ESC) && (i < 19))
+	{
+		i++;
+		pStr1[i] = getche();
+	}
+	pStr1[i] = '\0';
+	printf("\nOutput the string by calling printf():%s\n", pStr1);
+
+	printf("Display string2 and string3 by calling puts():\n");
+	puts(cStr2);
+	puts(cStr3);
+	printf("Size of the array cStr2:%d\n", sizeof(cStr2));
+	printf("Size of the array cStr3:%d\n", sizeof(cStr3));
+
+	printf("Using the pointer to output the string2 by calling printf():\n");
+	pStr2 = cStr2;
+	printf("%s", pStr2);
+
+	printf("Using the pointer to output the string3 by calling putchar():\n");
+	pStr3 = cStr3;
+	while (*pStr3)
+	{
+		putchar(*pStr3);
+		pStr3++;
+	}
+	printf("The End!\n");
+}
 
 int MathTest()
 {
@@ -511,7 +524,7 @@ int main()
 
 	//Point_Array();
 
-	PerfectNum();
+	//PerfectNum();
 
 	//iCount = sizeof(iArray) / sizeof(iArray[0]);
 	//ReverseArray(iArray, iCount);
