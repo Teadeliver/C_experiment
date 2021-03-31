@@ -1,78 +1,37 @@
-#define _CRT_SECURE_NO_WARNINGS 1
-#include "student.h"
-//定义全局变量
-//存放全班学生学号、计算机成绩、数学成绩、英语成绩、语文成绩、体育成绩
-int iStuNo[StuCount]; //全班学号
-int Computer[StuCount]; //全班计算机课程成绩
-int Math[StuCount]; //全班数学课程成绩
-int English[StuCount]; //全班英语课程成绩
-int Chinese[StuCount]; //全班语文课程成绩
-int Physics[StuCount]; //全班体育课程成绩
-/**************************************************
-函数功能：输入信息示例
-参数说明：无
-返回值： 无
-****************************************************/
-void InputEX()
-{
-	system("cls");
-	printf("\n\n 请以下面所示的顺序和格式输入原始数据（TEB键隔开）：\n");
-	printf("\t学号\t计算机\t数学\t英语\t语文\t体育\n");
-	printf("例如\t:");
-	//Sleep(800);
-	printf("001\t");
-	//Sleep(800);
-	printf("99\t");
-	//Sleep(800);
-	printf("88\t");
-	//Sleep(800);
-	printf("77\t");
-	//Sleep(800);
-	printf("66\t");
-	//Sleep(800);
-	printf("55\t");
-	putchar('\n');
-}
-/**************************************************
-函数功能：
- 输入全班学生学号、计算机成绩、数学成绩、英语成绩、语文成绩、体育成绩
-参数说明：无
-返回值： 输入操作正确返回 1，否则返回 0
-****************************************************/
-int InputData(void)
-{
-	int i;
-	int flag = 0; //用于判别输入操作的标志
+#include<stdio.h>
 
-	InputEX();
-	for (i = 0; i < StuCount; i++)
-	{
-		fflush(stdin);
-		printf("NO.%2d\t:", i + 1);
-		//输入学生学号 计算机成绩 数学成绩 英语成绩 语文成绩 体育成绩
-		scanf("%d", &iStuNo[i]);
-		scanf("%d", &Computer[i]);
-		scanf("%d", &Math[i]);
-		scanf("%d", &English[i]);
-		scanf("%d", &Chinese[i]);
-		scanf("%d", &Physics[i]);
-		if (Computer[i] > 100 || Computer[i] < 0)
-			break;
-		if (Math[i] > 100 || Math[i] < 0)
-			break;
-		if (English[i] > 100 || English[i] < 0)
-			break;
-		if (Chinese[i] > 100 || Chinese[i] < 0)
-			break;
-		if (Physics[i] > 100 || Physics[i] < 0)
-			break;
-	}
-	flag = i;
-	if (flag == StuCount)
-		return 1;
-	else
-	{
-		fflush(stdin);
-		return 0;
-	}
+void StudyStructMem()
+{
+    typedef struct birthday {
+        int year, month, day;
+    }BIR;
+
+    typedef struct student {
+        char name[10];
+        int  num;
+        BIR bir;
+        float  height;
+        float  weight;
+    }STU;
+    STU stu1 = { "张三丰",12345667,{1992,5,16},1.78f,62 };
+    STU  MyClass[5] = { {"张三丰",12345667,{1992,5,16},1.78f,62},
+                        {"李云龙",12466532,{1990,3,16},1.65f,45},
+                        {"郭  靖",13284567,{1993,8,11},1.70f,59.5f},
+                        {"苗翠花",13435767,{1995,1,19},1.75f,60},
+                        {"张无忌",15345650,{1994,7,15},1.68f,52} };
+    int i;
+    printf("        size    Addr0     Addr1     Addr2     Addr3     Addr4     Addr5\n");
+    printf("Student:%-8d%08X  %08X  %08X  %08X  %08X  %08X\n", sizeof(stu1), &stu1, &stu1.num, &stu1.bir, &stu1.height, &stu1.weight);  //输出stu1各成员的地址
+    printf("MyClass:%-8d%08X  %08X  %08X  %08X  %08X  %08X\n", sizeof(MyClass), &MyClass, MyClass + 1, MyClass + 2, MyClass + 3, MyClass + 4, MyClass + 5);  //输出MyClass数组每个元素的地址        
+    printf("Student:%s No.%d   %d-%d-%d   %.2fm   %.2fkg\n", stu1.name, stu1.num, stu1.bir.year, stu1.bir.month, stu1.bir.day, stu1.height, stu1.weight);//输出stu1各成员的值
+    printf("MyClass:\n");
+    for (i = 0; i < 5; i++)
+    {
+        printf("\t%s  No.%d   %d-%d-%d   %.2fm   %.2fkg\n", MyClass[i].name, MyClass[i].num, MyClass[i].bir.year, MyClass[i].bir.month, MyClass[i].bir.day, MyClass[i].height, MyClass[i].weight);
+    }
+}
+int main()
+{
+    StudyStructMem();
+    return 0;
 }

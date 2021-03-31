@@ -1,56 +1,40 @@
-ï»¿#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-void menu()
+#include <stdio.h>
+#define COUNT 1
+struct student
 {
-	printf("**********************************\n");
-	printf("***********		1.play	**********\n");
-	printf("***********		0.exit	**********\n");
-	printf("**********************************\n");
+    int iNum;
+    char cName[16];
+    int fChineseScore;
+    int fMathScore;
+    int fEnglishScore;
+};
+typedef struct student STU;
+void ModifyOne(STU* MyInfo);
+void DisplayTrancriptOne(STU myScore);
+int main(void)
+{
+    STU oneClass[COUNT] = { 123,"ÎâºÆ±ó",12,34,56 };
+    //×ÔĞĞÌí¼Ó´úÂëÊäÈëÑ§ÉúÊı¾İÒÔ±ãÓÚÑéÖ¤
+    ModifyOne(oneClass + 0);//ĞŞ¸ÄÏÂ±êÎª1µÄÑ§Éú³É¼¨ĞÅÏ¢
+    DisplayTrancriptOne(oneClass[0]);//ÏÔÊ¾ÏÂ±êÎª1µÄÑ§Éú³É¼¨ĞÅÏ¢
 }
-void game()
+void ModifyOne(STU* MyInfo)
 {
-	int random_num = rand() % 100 + 1;
-	int input = 0;
-	while (1)
-	{
-		printf("è¯·è¾“å…¥çŒœçš„æ•°å­—>:");
-		scanf("%d", &input);
-		if (input > random_num)
-		{
-			printf("çŒœå¤§äº†\n");
-		}
-		else if (input < random_num)
-		{
-			printf("çŒœå°äº†\n");
-		}
-		else
-		{
-			printf("æ­å–œä½ ï¼ŒçŒœå¯¹äº†\n");
-			break;
-		}
-	}
+    /*ÒÔÏÂ¸÷½á¹¹Ìå³ÉÔ±µÄ±íÊ¾¿ÉÒÔ³¢ÊÔ¶àÖÖ·½Ê½*/
+
+    MyInfo->fChineseScore = 30;//ĞŞ¸ÄÑ§ÉúµÄÓïÎÄ³É¼¨Îª30
+
+    MyInfo->fEnglishScore = 80;//ĞŞ¸ÄÑ§ÉúµÄÓ¢Óï³É¼¨Îª80
+
+    MyInfo->fMathScore = 100;//ĞŞ¸ÄÑ§ÉúµÄÊıÑ§³É¼¨Îª100
 }
-int main()
+void DisplayTrancriptOne(STU myScore)
 {
-	int input = 0;
-	srand((unsigned)time(NULL));
-	do
-	{
-		menu();
-		printf("è¯·é€‰æ‹©>:");
-		scanf("%d", &input);
-		switch (input)
-		{
-		case 1:
-			game();
-			break;
-		case 0:
-			break;
-		default:
-			printf("é€‰æ‹©é”™è¯¯,è¯·é‡æ–°è¾“å…¥!\n");
-			break;
-		}
-	} while (input);
-	return 0;
+    printf("\n my data\n");
+    printf("Ñ§ºÅ  ĞÕÃû  ÓïÎÄ  ÊıÑ§ Ó¢Óï£º\n");
+    printf("%d\t", myScore.iNum);    //Êä³öÑ§ºÅ
+    printf("%s\t", myScore.cName);    //Êä³öĞÕÃû
+    printf("%d\t", myScore.fChineseScore);    //Êä³öÓïÎÄ³É¼¨
+    printf("%d\t", myScore.fMathScore);    //Êä³öÊıÑ§³É¼¨
+    printf("%d\n", myScore.fEnglishScore);    //Êä³öÓ¢Óï³É¼¨
 }

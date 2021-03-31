@@ -1,3 +1,4 @@
+#define _CRT_SECURE_NO_WARNINGS 1
 #include "student.h"
 /**************************************************
 函数功能：显示菜单并返回选择的菜单项编号
@@ -56,22 +57,22 @@ int MenuHandle(int option)
 		getche();
 		break;
 	case 2:
-		StaticScore();
+		//StaticScore();
 		printf("\n 完成分数统计，按任意键继续......");
 		getche();
 		break;
 	case 3:
-		StaticPerson();
+		//StaticPerson();
 		printf("\n 完成人数统计，按任意键继续......");
 		getche();
 		break;
 	case 4:
-		SortByAve();
+		//SortByAve();
 		printf("\n 完成排序，按任意键继续......");
 		getche();
 		break;
 	case 5:
-		Display();
+		//Display();
 		printf("\n 按任意键继续......");
 		getche();
 		break;
@@ -86,44 +87,44 @@ int MenuHandle(int option)
 ****************************************************/
 void main(void)
 {
-	int i;
-	int option;
-	int quit;
+	//int i;
+	//int option;
+	//int quit;
 
-	//SetConsoleTitle("实验七 成绩管理系统");  //设置控制台标题
-	system("color B2");                     //设置背景色和前景色
-	printf("\n\n\n\n\n");
-	printf("\t\t*************************************************\n");
-	printf("\t\t*\t\t\t\t\t\t*\n");
-	printf("\t\t*\t\t\t\t\t\t*\n");
-	printf("\t\t*\t\t\t\t\t\t*\n");
-	printf("\t\t*\t\t\t\t\t\t*\n");
-	printf("\t\t*\t\t\t\t\t\t*\n");
-	printf("\t\t*\t\t学生成绩管理程序\t\t*\n");
-	printf("\t\t*\t\t\t\t\t\t*\n");
-	printf("\t\t*\t\t\t\t\t\t*\n");
-	printf("\t\t*\t\t\t\t\t\t*\n");
-	printf("\t\t*\t\t按任意键进入……\t\t*\n");
-	printf("\t\t*\t\t\t\t\t\t*\n");
-	printf("\t\t*\t\t\t\t\t\t*\n");
-	printf("\t\t*************************************************\n");
-	printf("\t\t\t\t\tBy: 吴浩斌");
-	getche();
-	printf("\n\n\t\t正在进入");
-	for (i = 0; i < 5; i++)
-	{
-		Sleep(600);
-		printf(" .");
-	}
+	////SetConsoleTitle("实验七 成绩管理系统");  //设置控制台标题
+	//system("color B0");                     //设置背景色和前景色
+	//printf("\n\n\n\n\n");
+	//printf("\t\t*************************************************\n");
+	//printf("\t\t*\t\t\t\t\t\t*\n");
+	//printf("\t\t*\t\t\t\t\t\t*\n");
+	//printf("\t\t*\t\t\t\t\t\t*\n");
+	//printf("\t\t*\t\t\t\t\t\t*\n");
+	//printf("\t\t*\t\t\t\t\t\t*\n");
+	//printf("\t\t*\t\t学生成绩管理程序\t\t*\n");
+	//printf("\t\t*\t\t\t\t\t\t*\n");
+	//printf("\t\t*\t\t\t\t\t\t*\n");
+	//printf("\t\t*\t\t\t\t\t\t*\n");
+	//printf("\t\t*\t\t按任意键进入……\t\t*\n");
+	//printf("\t\t*\t\t\t\t\t\t*\n");
+	//printf("\t\t*\t\t\t\t\t\t*\n");
+	//printf("\t\t*************************************************\n");
+	//printf("\t\t\t\t\tBy: 比茗");
+	//getche();
+	//printf("\n\n\t\t正在进入");
+	//for (i = 0; i < 5; i++)
+	//{
+	//	Sleep(600);
+	//	printf(" .");
+	//}
 
-	while (1)
-	{
-		option = MenuSelect();
-		quit = MenuHandle(option);
-		if (quit == 1)
-		{
-			printf("\n\n\t正在退出，谢谢使用...\n");
-			break;
-		}
-	}
+	//while (1)
+	//{
+	//	option = MenuSelect();
+	//	quit = MenuHandle(option);
+	//	if (quit == 1)
+	//	{
+	//		printf("\n\n\t正在退出，谢谢使用...\n");
+	//		break;
+	//	}
+	//}
 }

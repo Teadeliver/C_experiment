@@ -21,10 +21,10 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{eaf80113-37c8-491a-90ff-7db048e21fec}</ProjectGuid>
-    <RootNamespace>Experiment7studentself</RootNamespace>
+    <ProjectGuid>{edb4edc5-dbc6-4006-886b-ecfd08094017}</ProjectGuid>
+    <RootNamespace>Experiment7studenttogether</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>Experiment_7_ student_self</ProjectName>
+    <ProjectName>Experiment_7_ student_self_again</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -85,7 +85,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <WarningLevel>Level2</WarningLevel>
+      <WarningLevel>Level3</WarningLevel>
       <SDLCheck>false</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
@@ -143,11 +143,11 @@
     <ClInclude Include="student.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Experiment_7_ student\display.c" />
-    <ClCompile Include="..\Experiment_7_ student\input.c" />
-    <ClCompile Include="..\Experiment_7_ student\sort.c" />
-    <ClCompile Include="..\Experiment_7_ student\static.c" />
-    <ClCompile Include="..\Experiment_7_ student\student.c" />
+    <ClCompile Include="display.c" />
+    <ClCompile Include="input.c" />
+    <ClCompile Include="sort.c" />
+    <ClCompile Include="static.c" />
+    <ClCompile Include="student.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

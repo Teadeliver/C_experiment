@@ -15,7 +15,12 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="display.c">
+    <ClInclude Include="student.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="student.c">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="input.c">
@@ -27,13 +32,8 @@
     <ClCompile Include="static.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="student.c">
+    <ClCompile Include="display.c">
       <Filter>源文件</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="student.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>
